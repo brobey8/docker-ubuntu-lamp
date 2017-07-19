@@ -40,7 +40,6 @@ RUN apt-get install -y \
 	php7.0-xsl
 RUN apt-get install apache2 libapache2-mod-php7.0 -y
 RUN apt-get install mariadb-common mariadb-server mariadb-client -y
-RUN apt-get install postfix -y
 RUN apt-get install git nodejs npm composer nano tree vim curl ftp -y
 RUN npm install -g bower grunt-cli gulp
 
@@ -48,7 +47,7 @@ COPY run.sh /usr/sbin/
 
 RUN a2enmod rewrite
 RUN ln -s /usr/bin/nodejs /usr/bin/node
-RUN chmod +x /usr/sbin/run-lamp.sh
+RUN chmod +x /usr/sbin/run.sh
 RUN chown -R www-data:www-data /var/www/html
 
 VOLUME /var/www/html
