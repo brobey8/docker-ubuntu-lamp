@@ -22,6 +22,7 @@ The only thing you should need to do is add your vhosts in `/etc/apache2/sites-a
 And symlink it:
 
 ```cd /etc/apache2/sites-enabled
-ln -s /etc/apache2/sites-available/mycontainer.conf```
+ln -s /etc/apache2/sites-available/mycontainer.conf
+```
 
 Restart the container / apache2 and you're good to go.
