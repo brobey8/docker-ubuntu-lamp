@@ -10,7 +10,7 @@
 /usr/bin/mysqld_safe --timezone=${DATE_TIMEZONE}&
 
 # Run Apache:
-if [ $LOG_LEVEL == 'debug' ]; then
+if [ "$LOG_LEVEL" == 'debug' ]; then
     /usr/sbin/apachectl -DFOREGROUND -k start -e debug
 else
     &>/dev/null /usr/sbin/apachectl -DFOREGROUND -k start
