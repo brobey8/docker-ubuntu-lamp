@@ -13,5 +13,6 @@
 # context after restarting the container.  httpd won't start correctly
 # if it thinks it is already running.
 rm -rf /run/httpd/*
+rm -f /var/run/apache2/apache2.pid
 
 exec /usr/sbin/apachectl -D FOREGROUND
