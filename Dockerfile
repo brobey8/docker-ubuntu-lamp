@@ -14,6 +14,7 @@ RUN apt-get install -y \
 	php7.0-mcrypt \
 	php7.0-pgsql \
 	php7.0-mbstring \
+	apt-get install php-mysql \
 	php7.0-dom
 	
 RUN apt-get install apache2 libapache2-mod-php7.0 -y
