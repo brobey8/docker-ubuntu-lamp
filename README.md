@@ -9,7 +9,7 @@ Note: I'm using jwilder/nginx-proxy to expose my containers using the environmen
 
 The only thing you should need to do is add your vhosts in `/etc/apache2/sites-available` e.g:
 
-`
+```
 <VirtualHost *:80>
   ServerName mycontainer.docker
   DocumentRoot "/var/www/html/public"
@@ -17,11 +17,11 @@ The only thing you should need to do is add your vhosts in `/etc/apache2/sites-a
     AllowOverride all
   </Directory>
 </VirtualHost>
-`
+```
 
 And symlink it:
 
-`cd /etc/apache2/sites-enabled
-ln -s /etc/apache2/sites-available/mycontainer.conf`
+```cd /etc/apache2/sites-enabled
+ln -s /etc/apache2/sites-available/mycontainer.conf```
 
 Restart the container / apache2 and you're good to go.
