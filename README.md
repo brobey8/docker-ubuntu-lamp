@@ -25,4 +25,11 @@ And symlink it:
 ln -s /etc/apache2/sites-available/mycontainer.conf
 ```
 
+Setting up the DB:
+
+Login to mysql - `mysql` and create your database.
+
+Once you've done that add another user `CREATE USER 'myapp'@'localhost' IDENTIFIED BY 'password';`
+Then give that user access `GRANT ALL PRIVILEGES ON myapp.* TO 'myapp'@'%' WITH GRANT OPTION;`
+
 Restart the container / apache2 and you're good to go.
