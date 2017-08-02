@@ -14,7 +14,7 @@ RUN apt-get install -y \
 	php7.0-mcrypt \
 	php7.0-pgsql \
 	php7.0-mbstring \
-	apt-get install php-mysql \
+	php-mysql \
 	php7.0-dom \
 	php7.0-gd \
 	zip unzip php7.0-zip
