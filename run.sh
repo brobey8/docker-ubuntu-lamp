@@ -9,9 +9,10 @@
 # Run MariaDB
 /usr/bin/mysqld_safe --timezone=${DATE_TIMEZONE}&
 
-# Run Apache:
-if [ $LOG_LEVEL == 'debug' ]; then
-    /usr/sbin/apachectl -DFOREGROUND -k start -e debug
-else
-    &>/dev/null /usr/sbin/apachectl -DFOREGROUND -k start
-fi
+# Make sure we're not confused by old, incompletely-shutdown httpd
+# context after restarting the container.  httpd won't start correctly
+# if it thinks it is already running.
+rm -rf /run/httpd/*
+rm -f /var/run/apache2/apache2.pid
+
+exec /usr/sbin/apachectl -D FOREGROUND
